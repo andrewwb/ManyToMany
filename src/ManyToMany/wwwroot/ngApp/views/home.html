@@ -1,0 +1,16 @@
+<h2>Home</h2>
+<form ng-submit="controller.addMovie(actor.id, movie)">
+    <input ng-model="movie.title" placeholder="Title"/>
+    <select ng-model="actor" ng-options="actor.firstName for actor in controller.actors">        
+    </select>
+    <input type="submit" />
+</form>
+
+<div ng-repeat="movie in controller.movies">
+    <h2>{{movie.title}}</h2>
+    <ul class="list-group">
+        <li class="list-group-item-info" ng-repeat="actor in movie.actors">
+            {{actor.firstName}} {{actor.lastName}}
+        </li>
+    </ul>
+</div>
